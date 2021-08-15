@@ -1,15 +1,15 @@
-:: Script Name			:   RunSSMSAs.bat
-:: Create Date			:	2021-08-15
-:: Author				:   Mova
-:: Purpose				:   To Run SQL Server Management Studio as Different user
-:: Used By				:	MsSQL Developer
-:: Source				:	https://github.com/IamMova/SQLServerPackage/tree/master/Batch_Files
+:: Script Name		:   	RunSSMSAs.bat
+:: Create Date		:	2021-08-15
+:: Author		:   	Mova
+:: Purpose		:   	To Run SQL Server Management Studio as Different user
+:: Used By		:	MsSQL Developer
+:: Source		:	https://github.com/IamMova/SQLServerPackage/tree/master/Batch_Files
 :: -------------------------------------------------------------------------------------------------------
 :: Revision History
 :: -------------------------------------------------------------------------------------------------------
-:: Date(yyyy-mm-dd)    Version/Ticket #		Author              Comments
+:: Date(yyyy-mm-dd)    Version/Ticket #		Author              	Comments
 :: -------------------------------------------------------------------------------------------------------
-:: 2021-08-15			1.0					Mova				Created
+:: 2021-08-15		1.0			Mova			Created
 :: -------------------------------------------------------------------------------------------------------
 
 @echo off
