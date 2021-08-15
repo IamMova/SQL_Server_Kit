@@ -1,47 +1,47 @@
 /***************************************************************************************************
-Script Name			:   Excel_To_SQLServer_Table
-Create Date			:	2016-08-29
-Author				:   Mova
-Description			:   This script is helpful when DB Developer wants to dump the data from Excel to
-						any SQL Server table without using import/export feature.
-						This script will just prepare Excel formula for you and you just need to paste
-						it in Excel cell, which will create a SQL Query.
-Call by				:	NA
+Script Name		:	Excel_To_SQLServer_Table
+Create Date		:	2016-08-29
+Author			:	Mova
+Description		:	This script is helpful when DB Developer wants to dump the data from Excel to
+				any SQL Server table without using import/export feature.
+				This script will just prepare Excel formula for you and you just need to paste
+				it in Excel cell, which will create a SQL Query.
+Call by			:	NA
 Affected table(s)	:	NA
-Used By				:	Used by Database Developer, where they want to dump the data from Excel to 
-						SQL Server Table
-Parameter(s)/Values	:   @TableName			- Name of the Table to be created
-						@CreateActualTable	- Can be Yes/No. Use Yes, only if want to create and insert the data in actual table
-						@SheetNameOfHeader	- Excel sheet name for header (table column list)
-						@HeaderColumnRow	- To Specify the Row # from where the header can be pulled
-						@DataColumnRow		- To Specify the Row # from where the data starts
-						@StartingColumn		- Start range of excel column
-						@EndingColumn		- End range of excel column
-						@SeparatedDelimiter - This will be only changed you are using delimiter other than comma(,)
-Usage				:	@TableName			= 'Order_Details_2020'
-						@CreateActualTable	= 'No'
-						@SheetNameOfHeader	= 'Orders Of 2020' 
-						@HeaderColumnRow	= '1' 
-						@DataColumnRow		= '2' 
-						@StartingColumn		= 'A'
-						@EndingColumn		= 'G'
-Source				:	https://github.com/IamMova/SQLServerPackage/tree/master/Excel_Pack
-Sample File			:	Sample_Data_File.xlsx
+Used By			:	Used by Database Developer, where they want to dump the data from Excel to 
+				SQL Server Table
+Parameter(s)/Values	:   	@TableName		- Name of the Table to be created
+				@CreateActualTable	- Can be Yes/No. Use Yes, only if want to create and insert the data in actual table
+				@SheetNameOfHeader	- Excel sheet name for header (table column list)
+				@HeaderColumnRow	- To Specify the Row # from where the header can be pulled
+				@DataColumnRow		- To Specify the Row # from where the data starts
+				@StartingColumn		- Start range of excel column
+				@EndingColumn		- End range of excel column
+				@SeparatedDelimiter 	- This will be only changed you are using delimiter other than comma(,)
+Usage			:	@TableName		= 'Order_Details_2020'
+				@CreateActualTable	= 'No'
+				@SheetNameOfHeader	= 'Orders Of 2020' 
+				@HeaderColumnRow	= '1' 
+				@DataColumnRow		= '2' 
+				@StartingColumn		= 'A'
+				@EndingColumn		= 'G'
+Source			:	https://github.com/IamMova/SQLServerPackage/tree/master/Excel_Pack
+Sample File		:	Sample_Data_File.xlsx
 ****************************************************************************************************
 SUMMARY OF CHANGES
-Date(yyyy-mm-dd)    Version/Ticket #	Author              Comments
+Date(yyyy-mm-dd)    	Version/Ticket #	Author		Comments
 -------------------------------------------------------------------------------------------------------
-2016-08-29			1.0					Mova				Created
+2016-08-29		1.0			Mova		Created
 ***************************************************************************************************/
 -- Setup (Start)
-DECLARE @TableName NVARCHAR(MAX)		= 'Order_Details_2020'	-- Name of Table you want to create or use
-DECLARE @CreateActualTable VARCHAR(10)	= 'No'					-- Yes | No [*Yes - Refer Actual Table *No - Create Temp Table]
+DECLARE @TableName NVARCHAR(MAX)	= 'Order_Details_2020'		-- Name of Table you want to create or use
+DECLARE @CreateActualTable VARCHAR(10)	= 'No'				-- Yes | No [*Yes - Refer Actual Table *No - Create Temp Table]
 DECLARE @SheetNameOfHeader VARCHAR(100) = 'Orders Of 2020'		-- Name of Excel sheet to get the column name 
-DECLARE @HeaderColumnRow VARCHAR(100)	= '1'					-- Specify Row # of Header Column
-DECLARE @DataColumnRow VARCHAR(100)		= '2'					-- Specify the Row # from where the data starts
-DECLARE @StartingColumn NVARCHAR(100)	= 'A'					-- Specify the start column
-DECLARE @EndingColumn NVARCHAR(100)		= 'G'					-- Specify the end column
-DECLARE @SeparatedDelimiter VARCHAR(10) = ','					-- In many cases this will be comma. but if you are using different seperator, specify it here
+DECLARE @HeaderColumnRow VARCHAR(100)	= '1'				-- Specify Row # of Header Column
+DECLARE @DataColumnRow VARCHAR(100)	= '2'				-- Specify the Row # from where the data starts
+DECLARE @StartingColumn NVARCHAR(100)	= 'A'				-- Specify the start column
+DECLARE @EndingColumn NVARCHAR(100)	= 'G'				-- Specify the end column
+DECLARE @SeparatedDelimiter VARCHAR(10) = ','				-- In many cases this will be comma. but if you are using different seperator, specify it here
 -- Setup (End)
 
 /***************************************************************************************************/
