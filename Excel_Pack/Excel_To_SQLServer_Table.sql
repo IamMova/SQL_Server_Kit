@@ -25,7 +25,7 @@ Usage				:	@TableName			= 'Order_Details_2020'
 						@DataColumnRow		= '2' 
 						@StartingColumn		= 'A'
 						@EndingColumn		= 'G'
-Source				:	https://github.com/IamMova/SQLServerPackage/ExcelPack
+Source				:	https://github.com/IamMova/SQLServerPackage/tree/master/Excel_Pack
 Sample File			:	Sample_Data_File.xlsx
 ****************************************************************************************************
 SUMMARY OF CHANGES
